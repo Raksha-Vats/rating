@@ -1,15 +1,20 @@
 import mongoose from 'mongoose'
 
 const leetcodeSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+    username: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
     },
     rating: {
         type: Number,
         default: 0
     },
+    // problems: {
+    //     type: Array,
+    //     default: []
+    // },
     lastFetched: {
         type: Date,
         default: Date.now
