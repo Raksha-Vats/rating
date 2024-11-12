@@ -1,0 +1,188 @@
+/* Importing the Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body background styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: radial-gradient(farthest-side at bottom left, #271d3b, transparent 900px), 
+                    radial-gradient(farthest-corner at bottom right, #3a233f, transparent 1000px);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Main container styling */
+.main {
+  width: 80vw;
+  
+  /* max-width: 100%; */
+  margin: 50px auto;
+  padding: 40px;
+  background:rgb(0, 0, 0);
+    border:2px solid rgb(0, 0, 0);
+    box-shadow: 0 0 12px 6px rgb(31 15 34) ;
+    backdrop-filter:blur(50px);
+    border:10px;
+    background: transparent;
+}
+
+/* Greeting text with animation
+.greeting {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+} */
+
+/* Typing animation */
+.greeting {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    /* border-right: 4px solid #ffeb3b; Blinking cursor */
+    width: fit-content;
+    margin: 0 auto;
+    animation: typing 4s steps(30) 1s forwards, blink 0.7s infinite step-end;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+/* Contest Ratings Section */
+.contest {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.contest h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffeb3b;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.rating-card {
+  background: rgba(45, 34, 60, 0.9); /* Updated card background */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.rating-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+  background-color: #623a6b; /* Color change on hover */
+}
+
+.rating-card h3 {
+  font-size: 1.5rem;
+  color: #00e5ff;
+  margin-bottom: 10px;
+}
+
+.rating-card h5 {
+  font-size: 1.2rem;
+  color: #f5c542;
+}
+
+/* Problems Solved Section */
+.problem {
+  text-align: center;
+}
+
+.problem h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffeb3b;
+}
+
+.problem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.leetcodeProblems {
+  background: rgba(45, 34, 60, 0.9); /* Same background as rating cards */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.leetcodeProblems:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+  background-color: #623a6b; /* Color change on hover */
+}
+
+.leetcodeProblems h3 {
+  font-size: 1.5rem;
+  color: #00e5ff;
+}
+
+.leetcodeProblems h5 {
+  font-size: 1.2rem;
+  color: #f5c542;
+}
+
+.leetcodeProblems p {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rating-container, .problem-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .rating-card, .leetcodeProblems {
+    width: 100%;
+    height: auto;
+  }
+}

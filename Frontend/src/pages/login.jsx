@@ -2,12 +2,15 @@ import React  from 'react';
 
 import 'boxicons/css/boxicons.min.css';
 import '../style/login.css';
+import NavBar from '../components/navbar.jsx'
 
 
 const Login =() =>
     {
 return(
-    <div className="wrapper">
+ <>
+    <NavBar/>
+      <div className="wrapper">
         <form action="">
             <h1>
                 Login
@@ -29,6 +32,7 @@ return(
             
         </form>
     </div>
+ </>
 );
 };
 
