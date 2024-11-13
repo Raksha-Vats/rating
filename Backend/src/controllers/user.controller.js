@@ -88,6 +88,10 @@ const refreshUser = async(req,res) =>
 
         }
     }
+    catch(e)
+    {
+        console.log(e);
+    }
 }
 
 export{registerUser,loginUser}; 
