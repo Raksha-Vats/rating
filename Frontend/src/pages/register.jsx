@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'boxicons/css/boxicons.min.css';
 import '../style/register.css';
+import NavBar from '../components/navbar.jsx'
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -44,6 +45,8 @@ const Register = () => {
     };
 
     return (
+        <>
+        <NavBar/>
         <div className="wrapper">
             <form onSubmit={handleSubmit}>
                 <h1>Registration</h1>
@@ -140,6 +143,7 @@ const Register = () => {
                 <button type="submit" className="btn">Register</button>
             </form>
         </div>
+        </>
     );
 };
 
