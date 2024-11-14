@@ -12,10 +12,6 @@ const codeforcesSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    lastFetched: {
-        type: Date,
-        default: Date.now
-    }
 }, { timestamps: true });
 
 export const Codeforces = mongoose.model("Codeforces", codeforcesSchema);

@@ -19,13 +19,16 @@ const userSchema = new mongoose.Schema({
         minlength: 6
     },
     codechefusername: {
-        type: String, trim: true , 
+        type: String,
+        trim: true, 
     },
     codeforcesusername: {
-         type: String, trim: true , 
+        type: String,
+        trim: true, 
     },
     leetcodeusername: {
-        type: String, trim: true , 
+        type: String,
+        trim: true, 
     }
 }, { timestamps: true });
 

@@ -11,10 +11,6 @@ const codechefSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    lastFetched: {
-        type: Date,
-        default: Date.now
-    }
 }, { timestamps: true });
 
 export const CodeChef = mongoose.model("CodeChef", codechefSchema);
