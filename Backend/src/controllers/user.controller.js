@@ -24,9 +24,9 @@ const registerUser = async (req, res) => {
             }
         });
 
-        // Save user to the database
+        
         await user.save();
-
+        //cal store function of codechef leetcode and codeforces?
         res.status(201).json({ message: 'User registered successfully', user });
     } catch (error) {
         res.status(400).json({ message: 'Error registering user', error: error.message });
@@ -60,38 +60,40 @@ const loginUser = async(req ,res)=>{
     }
 }
 
-const refreshUser = async(req,res) =>
-{
-    try{
-        const {codechef,leetcode,codeforces} = req.body;
-        const codechef_data_refresh=async(req ,res)=>
-        {
-            var d = {};
-            let options = {
-                'method': 'GET',
-                'url': 'https://codechef-api.vercel.app/'+codechef,
-                'headers': {}
-            };
-            const response = await fetch(options.url, {
-                method: options.method,
-                headers: options.headers
-            });
-            const data = await response.json();
-            d.profile = data.profile;
-            d.name = data.name;
-            d.currentRating = data.currentRating;
-            d.highestRating = data.highestRating;
-            d.globalRank = data.globalRank;
-            d.countryRank = data.countryRank;
-            d.stars = data.stars;
-            
 
-        }
-    }
-    catch(e)
-    {
-        console.log(e);
-    }
-}
+// const leetcodefetch =async (username) => {
+    
+//     //store in database codechef ?
+//     const url = `https://leetcode.com/graphql/`
+//     const query = `
+//     {
+//     user(username: "${username}") {
+//     id
+//     username
+//     rating
+//     isLocked
+//     }
+//     }
+//     `
+//     const response = await fetch(url, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json',
+//         },
+//         body: JSON.stringify({ query })
+//     });
+//     const data = await response.json();
+//     console.log(data);
+//     return 0;
+// }
+
+// const codeforcesfetch = (username) => {
+//     return 0;
+// }
+
+// const codecheffetch = (username) => {
+//     return 0;
+// }
 
 export{registerUser,loginUser}; 

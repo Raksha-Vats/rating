@@ -5,37 +5,35 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true  
-        
     },
     email: {
         type: String,
         required: true,
         unique: true,
         lowercase: true,
-        trim: true  // Removes spaces from the beginning and end of email
+        trim: true  ,
     },
     password: {
         type: String,
         required: true,
         minlength: 6
     },
-    codechef: {
-        username: { type: String, trim: true },
-        rating: { type: Number, default: 0 }
+    codechefusername: {
+        type: String,
+        trim: true, 
     },
-    codeforces: {
-        username: { type: String, trim: true },
-        rating: { type: Number, default: 0 }
+    codeforcesusername: {
+        type: String,
+        trim: true, 
     },
-    leetcode: {
-        username: { type: String, trim: true },
-        rating: { type: Number, default: 0 }
+    leetcodeusername: {
+        type: String,
+        trim: true, 
     }
 }, { timestamps: true });
 
 userSchema.methods.matchPassword=async function (password) {
-{
-      return password==this.password;
-}}
+    return password == this.password;
+}
 
 export const User = mongoose.model("User", userSchema);
